@@ -1,0 +1,32 @@
+{
+    "name": "hakimrazalan/enginemailer-php",
+    "description": "EngineMailer PHP REST SDK",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "HakimRazalan\\EngineMailer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hakim Razalan",
+            "email": "akimrr@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/http-client": "^7.2",
+        "laravie/codex-filter": "^2.1",
+        "laravie/codex": "^6.2",
+        "spatie/ray": "^1.42"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    },
+    "require-dev": {
+        "php-http/guzzle7-adapter": "^1.1",
+        "rector/rector": "^2.0"
+    }
+}
