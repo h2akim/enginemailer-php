@@ -17,8 +17,7 @@
     "require": {
         "symfony/http-client": "^7.2",
         "laravie/codex-filter": "^2.1",
-        "laravie/codex": "^6.2",
-        "spatie/ray": "^1.42"
+        "laravie/codex": "^6.2"
     },
     "config": {
         "allow-plugins": {
