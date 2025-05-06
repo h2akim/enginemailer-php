@@ -2,9 +2,7 @@
 
 namespace HakimRazalan\EngineMailer\Contracts;
 
-use Laravie\Codex\Contracts\Request;
-
-interface SendEmail extends Request
+interface SendEmail
 {
     public function handle();
 
