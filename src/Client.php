@@ -35,7 +35,7 @@ class Client extends \Laravie\Codex\Client
      * @return Request 
      * @throws InvalidArgumentException 
      */
-    public function sendEmail(?string $version = null): \Laravie\Codex\Contracts\Request
+    public function sendEmail(?string $version = null): Contracts\SendEmail
     {
         return $this->uses('Submission.SendEmail', $version);
     }

@@ -24,7 +24,6 @@ class Request extends \Laravie\Codex\Request implements Filterable
     protected function getApiHeaders(): array
     {
         if (! \is_null($this->client->getApiKey())) {
-            $headers['Content-Type'] = 'application/json';
             $headers['APIKey'] = $this->client->getApiKey();
         }
 

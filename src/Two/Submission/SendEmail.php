@@ -4,11 +4,14 @@ namespace HakimRazalan\EngineMailer\Two\Submission;
 
 use HakimRazalan\EngineMailer\Exceptions\RequiredParameterException;
 use HakimRazalan\EngineMailer\Request;
+use Laravie\Codex\Concerns\Request\Json;
 use Laravie\Codex\Contracts\Response;
 use TypeError;
 
-class SendEmail extends Request
+class SendEmail extends Request implements \HakimRazalan\EngineMailer\Contracts\SendEmail
 {  
+    use Json;
+
     protected $attachments = [];
     protected $ccEmails = [];
     protected $bccEmails = [];
@@ -37,7 +40,7 @@ class SendEmail extends Request
     public function handle(): \Laravie\Codex\Contracts\Response
     {
         $this->checkRequiredParamsIsNotNull();
-        return $this->send('POST',
+        return $this->sendJson('POST',
             'Submission/SendEmail',
             $this->getApiHeaders(),
             $this->getFullEmailBody()
@@ -187,7 +190,7 @@ class SendEmail extends Request
         return $data;
     }
 
-    protected function checkRequiredParamsIsNotNull()
+    public function checkRequiredParamsIsNotNull()
     {
         !empty($this->getToEmail()) ?: throw new RequiredParameterException('ToEmail');
         !empty($this->getSenderEmail()) ?: throw new RequiredParameterException('SenderEmail');
