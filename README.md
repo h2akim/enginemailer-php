@@ -35,7 +35,7 @@ $client = Client::setup("<api-key>", $http);
 
 # Usages
 
-Currently this library only cater to send transaction email
+Currently this library only cater to send transactional email
 
 ```
 use HakimRazalan\EngineMailer\Client;
